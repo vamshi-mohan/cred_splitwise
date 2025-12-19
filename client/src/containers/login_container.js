@@ -1,40 +1,53 @@
 import React from 'react';
 import { Login } from '../components/login';
-import {instance} from '../utils/AxiosConfig';
+import { instance } from '../utils/AxiosConfig';
 import { withRouter } from "react-router-dom";
-import setAuthorizationToken from "../utils/AxiosConfig";
- class Login_smart extends React.Component{
-    constructor(props){
-        super(props)
-        this.props = props;
-        this.input = {};
-        this.state = {invalid: false};
-    }
-    TakeInput(event){
-        this.input[event.target.id] = event.target.value;
-    }
-    Login(){
-        // console.log('History is ',this.props.history.push("/Dashboard"));
-    var pr = instance.post('/login',this.input);
 
-    pr.then((response)=>{
-        console.log(response.data);
-        const token = response.data.token;
-        localStorage.setItem('jwtToken',token)
-        
-        if(response.data.Status == 'S'){
-            this.props.history.push("/Dashboard");
+class LoginSmart extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      username: "",
+      password: "",
+      invalid: false
+    };
+  }
+
+  handleInput = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  };
+
+  handleLogin = () => {
+    const { username, password } = this.state;
+
+    instance.post('/login', { username, password })
+      .then((response) => {
+        const { token, Status } = response.data;
+
+        if (Status === 'S') {
+          localStorage.setItem('jwtToken', token);
+          this.props.history.push("/Dashboard");
+        } else if (Status === 'F') {
+          this.setState({ invalid: true });
         }
-        else if(response.data.Status == 'F'){
-          this.setState({invalid:true});
-        }
-    })
-    }
-    render(){
-        return(
-        <Login sts = {this.state.invalid} input = {this.TakeInput.bind(this)} login = {this.Login.bind(this)}/>
-        )
-    }
+      })
+      .catch(() => {
+        this.setState({ invalid: true });
+      });
+  };
+
+  render() {
+    return (
+      <Login
+        sts={this.state.invalid}
+        input={this.handleInput}
+        login={this.handleLogin}
+      />
+    );
+  }
 }
 
-export default withRouter(Login_smart);
+export default withRouter(LoginSmart);

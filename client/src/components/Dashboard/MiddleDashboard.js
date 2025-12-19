@@ -76,7 +76,7 @@ if(element.data){
       <div className = "flex">
         <div className="float-left ml-3 borders">
           <ul>
-            {(owe.length == 0)?<li>You do not owe anything</li>:owe.map(value=>
+            {(owe.length === 0)?<li>You do not owe anything</li>:owe.map(value=>
              <li>
              <img
                className="imgs"
@@ -107,7 +107,7 @@ if(element.data){
 
         <div>
           <ul>
-          {(owed.length == 0)?<li>You do not owe anything</li>:owed.map(value=>
+          {(owed.length === 0)?<li>You do not owe anything</li>:owed.map(value=>
             <li>
             <img
               className="imgs"

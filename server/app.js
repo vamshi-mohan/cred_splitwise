@@ -9,10 +9,8 @@ app.use(bodyParser.json());
 app.use(require('./utils/cors'));
 
 app.use("/",userRoute);
-app.listen(process.env.PORT || 1234,(err)=>{
-    if(err){
-        console.log("Error in sever Staring ",err);
-    }else{
-        console.log("Server started .....")
-    }
-})
+const PORT = process.env.PORT || 5001;
+
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
+});

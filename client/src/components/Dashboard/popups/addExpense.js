@@ -1,49 +1,65 @@
 import React from "react";
 import "../../../styles/frndPop.css";
 import { connect } from "react-redux";
-import Chips, { Chip } from "react-chips";
-import {instance} from "../../../utils/AxiosConfig";
+import Chips from "react-chips";
+import { instance } from "../../../utils/AxiosConfig";
 import { store } from "../../../redux/store";
 import { userActionCreator } from "../../../redux/actionCreator/userAction";
+
 class AddExpense extends React.Component {
   constructor(props) {
     super(props);
-    this.input = {};
+
     this.state = {
-      chips: []
+      chips: [],
+      description: "",
+      amount: "",
+      date: ""
     };
   }
-  getdate() {
-    var today = new Date();
 
-    return (
-      today.getFullYear() +
-      "-" +
-      ("0" + (today.getMonth() + 1)).slice(-2) +
-      "-" +
-      ("0" + today.getDate()).slice(-2)
-    );
-  }
-  onChange = chips => {
-    console.log(chips);
-    this.setState({ ...this.state, chips });
+  onChangeChips = (chips) => {
+    this.setState({ chips });
   };
-  save() {
-    // console.log("clicked...", this.state.chips, this.input);
-    this.input.amount = Math.round(parseInt(this.input.amount)/(this.state.chips.length + 1));
-  
-    for(let value of this.state.chips){
-      // console.log({username:this.props.user.username,user:value,inp:this.input});
-      instance.post('/addExp',{username:this.props.user.username,user:value,inp:this.input}).then((resp)=>{
-        console.log("*****************************00",resp.data.doc);
-        var action = userActionCreator(resp.data.doc,'AddUser');
-       store.dispatch(action);
-        this.props.friend();
-      })
 
-      
+  handleChange = (e) => {
+    this.setState({ [e.target.id]: e.target.value });
+  };
+
+  save = () => {
+    const { chips, description, amount, date } = this.state;
+
+    if (!description || !amount || chips.length === 0) {
+      alert("Please fill all fields and select friends");
+      return;
     }
-  }
+
+    const splitAmount = Math.round(
+      parseInt(amount, 10) / (chips.length + 1)
+    );
+
+    chips.forEach(friend => {
+      instance
+        .post("/addExp", {
+          username: this.props.user.username,
+          user: friend,
+          inp: {
+            description,
+            amount: splitAmount,
+            date
+          }
+        })
+        .then(resp => {
+          const action = userActionCreator(resp.data.doc, "AddUser");
+          store.dispatch(action);
+          this.props.friend();
+        })
+        .catch(() => {
+          alert("Failed to add expense");
+        });
+    });
+  };
+
   render() {
     return (
       <div className="friendPopup">
@@ -51,71 +67,57 @@ class AddExpense extends React.Component {
           <div className="frnd-header">
             <span>Add an expense</span>
             <button className="float-right" onClick={this.props.friend}>
-              <i class="fas fa-times" />
+              <i className="fas fa-times" />
             </button>
           </div>
+
           <div className="exp-inp">
-            <label htmlFor="">With you and</label>
-            {/* <input id = "username"  placeholder = "Enter friend name" className = "exp-name" type="text"/> */}
+            <label>With you and</label>
             <div className="exp-name">
               <Chips
                 value={this.state.chips}
-                onChange={this.onChange}
+                onChange={this.onChangeChips}
                 suggestions={this.props.user.friends}
               />
             </div>
           </div>
+
           <div className="exp-inp2">
             <input
               id="description"
               type="text"
               placeholder="Enter Description"
-              onChange={e => {
-                this.input[e.target.id] = e.target.value;
-              }}
+              onChange={this.handleChange}
             />
             <input
               id="amount"
               type="number"
               placeholder="Enter Amount"
-              onChange={e => {
-                this.input[e.target.id] = e.target.value;
-              }}
+              onChange={this.handleChange}
             />
-           <br/>
-           {/* value={this.getdate()} */}
             <input
-              
               id="date"
               type="date"
-              onChange={e => {
-                this.input[e.target.id] = e.target.value;
-              }}
+              onChange={this.handleChange}
             />
           </div>
 
           <div className="pop-btn pop-btns">
-            <button className="btn Add" onClick={this.save.bind(this)}>
+            <button className="btn Add" onClick={this.save}>
               Save
             </button>
-
             <button className="btn cut" onClick={this.props.friend}>
               Close
             </button>
           </div>
         </div>
-       
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  console.log("state is  ", state);
-  return {
-    user: state.user
-  };
-};
+const mapStateToProps = state => ({
+  user: state.user
+});
 
-const fn = connect(mapStateToProps);
-export default fn(AddExpense);
+export default connect(mapStateToProps)(AddExpense);

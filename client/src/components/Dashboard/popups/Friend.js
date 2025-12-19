@@ -32,7 +32,7 @@ const Friend = props => {
             onClick={() => {
               takeInp.defaultUser = props.user.username;
             
-              if(takeInp.username == props.user.username){
+              if(takeInp.username === props.user.username){
                  alert("you can't add yourself as your Friend");
                  return;
               }
