@@ -7,7 +7,6 @@
 .fixed-top{
     position:fixed;top:0;right:0;left:0;z-index:1030
   }
-
   .DashboardNav{
     height: 35px;
     width: 100%;
@@ -56,4 +55,5 @@
     background: #FF6337;
     font-size:  12px;
     margin-right: 15px;
+
   }
