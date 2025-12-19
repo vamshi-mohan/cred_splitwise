@@ -10,7 +10,6 @@ import  Friend  from '../components/Dashboard/popups/Friend';
 import "../styles/Dashboard.css"
 import AddExpense from '../components/Dashboard/popups/addExpense';
 import SettleUp  from '../components/Dashboard/popups/settleUp';
-
 export class Dashboard extends React.Component{
     constructor(props){
         super(props);
@@ -92,4 +91,5 @@ render(){
 )
 }
 }
+
 
