@@ -1,4 +1,4 @@
-# 💸 Splitwise Clone – MERN Stack Application
+# 💸 Splitwise – MERN Stack Application
 
 A full-stack **Splitwise-like expense sharing application** built using the **MERN stack**.  
 The application allows users to **register, log in, add shared expenses with friends, and settle balances seamlessly**.
@@ -73,4 +73,5 @@ Splitwise-Clone/
 └── README.md
 
 ## 📁 Project Structure
+
 
