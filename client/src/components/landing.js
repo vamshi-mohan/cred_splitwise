@@ -5,7 +5,6 @@ export const Landing = ()=>{
     return (
         <div className = "landing ">
            <Header/>
-
             
             <main >
                 <div className = "landing-heading">
@@ -34,4 +33,5 @@ export const Landing = ()=>{
             </main>
         </div>
     )
+
 }
