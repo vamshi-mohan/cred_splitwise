@@ -6,7 +6,6 @@ app.post("/login",(req,res)=>{
     console.log(req.body);
     userOperation.login(req.body,res);
 })
-
 app.post("/signup",(req,res)=>{
     
     console.log(req.body);
@@ -69,5 +68,6 @@ app.post('/addExp',(req,res)=>{
 app.post('/settle',(req,res)=>{
     userOperation.settle(req.body,res);
 })
+
 
 module.exports =  app;
