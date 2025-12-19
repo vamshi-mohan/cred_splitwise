@@ -2,7 +2,6 @@
 .AddFriend{
     height: 100vh;
     width: 380px;
-  
    
 }
 
@@ -142,4 +141,5 @@ li{
     border-right:  1px solid lightgray;
     height: auto;
     margin-right: 25px;
+
 }
