@@ -11,7 +11,6 @@ export  class App extends React.Component{
     return (
       <div>
         <Switch>
-          
           <Route exact path = "/" component = {Landing}></Route>
           <Route exact path = "/login" component = {Login_smart}></Route>
           <Route exact path = "/signup" component = {SignUp}></Route>
