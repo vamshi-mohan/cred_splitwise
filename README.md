@@ -1,35 +1,84 @@
-# Splitwise-Clone
-Splitwise is a bill spliting application https://secure.splitwise.com, Here I have made a clone by using MERN stack
+Splitwise Clone – MERN Stack Application
 
-## How to use
+A full-stack Splitwise-like expense sharing application built using the MERN stack.
+The app allows users to register, log in, add shared expenses with friends, and settle balances seamlessly.
 
-```
-Use npm install to install all the dependencies. (In Terminal)
-1. cd/client
-   npm install
-   
-2. cd/server
-   npm install
-   
-Use node command to start server side server
-3. cd/server
-   node app.js
-   
-Use npm start to start the client side sever . (In another Terminal)
-4. cd/client
-   npm start
-```
+🚀 Live Features
 
-And point your browser to `http://localhost:3000`.
+🔐 User Authentication
 
-### Homepage
-![](images/homepage.png)
+Secure signup & login using JWT authentication
 
-### Dashboard
-![](images/dashboard.png)
+👥 Friend Management
 
-### Add an Expense
-![](images/expense.png)
+Add friends and manage shared expenses
 
-### settle Up
-![](images/settleup.png)
+💰 Expense Splitting
+
+Split expenses equally among selected users
+
+🔄 Settle Up
+
+Clear balances between users
+
+📊 Real-time Balance Updates
+
+Dashboard reflects updated balances instantly
+
+⚙️ RESTful API Architecture
+
+Clean separation of frontend and backend
+
+🧑‍💻 Tech Stack
+Frontend
+
+React.js
+
+Redux (State Management)
+
+Axios (API calls)
+
+React Router
+
+CSS
+
+Backend
+
+Node.js
+
+Express.js
+
+MongoDB
+
+Mongoose
+
+JWT (JSON Web Tokens)
+
+Tools & Platforms
+
+Git & GitHub
+
+MongoDB Atlas / Local MongoDB
+
+Postman (API testing)
+
+📁 Project Structure
+Splitwise-Clone/
+│
+├── client/                 # Frontend (React)
+│   ├── src/
+│   │   ├── components/
+│   │   ├── containers/
+│   │   ├── redux/
+│   │   ├── utils/
+│   │   └── App.js
+│   └── package.json
+│
+├── server/                 # Backend (Node + Express)
+│   ├── routes/
+│   ├── models/
+│   ├── Db/helpers/
+│   ├── app.js
+│   └── package.json
+│
+└── README.md
