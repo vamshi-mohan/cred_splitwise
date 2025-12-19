@@ -21,8 +21,7 @@ import '../styles/dashHeader.css'
       <label htmlFor="">{props.user.username}</label>
       
      </div>
-        
-
+       
     </nav>
     )
 }
@@ -36,4 +35,5 @@ const mapStateToProps = state => {
 
 const fn = connect(mapStateToProps);
 export default fn(DashHeader);
+
 
