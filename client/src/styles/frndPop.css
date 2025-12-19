@@ -20,8 +20,7 @@
     margin: auto;
     width: 352px;
     min-height: 303px;
-    height: auto;
-  
+    height: auto;  
     border: 1px solid #888;
    
 }
@@ -195,3 +194,4 @@
 .myList li:hover{
     background: lightgray;
 }
+
