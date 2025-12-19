@@ -11,7 +11,6 @@ export const Login = (props)=>{
       <img  src={require("../images/logo.png")} alt="" />
       </div>
 
-
       <div className = "signup-form">
         <h3>WELCOME TO SPLITWISE</h3>
         <label htmlFor="">Email address</label>
@@ -26,4 +25,5 @@ export const Login = (props)=>{
      </div>
      </div>
     )
+
 } 
