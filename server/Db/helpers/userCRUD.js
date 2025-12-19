@@ -12,7 +12,6 @@ AddUser(userObject,response){
        }
     })
 },
-
 login(userObject,response){
     userModel.findOne(userObject,(err,doc)=>{
         if(err){
@@ -96,6 +95,7 @@ settle(userObject,response){
 }
 
 }
+
 
 
 module.exports = userOperation;
