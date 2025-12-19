@@ -1,17 +1,18 @@
-Splitwise Clone – MERN Stack Application
-
 A full-stack Splitwise-like expense sharing application built using the MERN stack.
-The app allows users to register, log in, add shared expenses with friends, and settle balances seamlessly.
+The application allows users to register, log in, add shared expenses with friends, and settle balances seamlessly.
 
 🚀 Live Features
-
 🔐 User Authentication
 
-Secure signup & login using JWT authentication
+Secure Signup & Login
+
+Authentication handled using JWT (JSON Web Tokens)
 
 👥 Friend Management
 
-Add friends and manage shared expenses
+Add friends
+
+Manage shared expenses between users
 
 💰 Expense Splitting
 
@@ -19,15 +20,17 @@ Split expenses equally among selected users
 
 🔄 Settle Up
 
-Clear balances between users
+Clear outstanding balances between users
 
 📊 Real-time Balance Updates
 
-Dashboard reflects updated balances instantly
+Dashboard reflects balance changes instantly
 
 ⚙️ RESTful API Architecture
 
-Clean separation of frontend and backend
+Clean separation of Frontend and Backend
+
+Scalable and maintainable design
 
 🧑‍💻 Tech Stack
 Frontend
@@ -60,25 +63,4 @@ Git & GitHub
 
 MongoDB Atlas / Local MongoDB
 
-Postman (API testing)
-
-📁 Project Structure
-Splitwise-Clone/
-│
-├── client/                 # Frontend (React)
-│   ├── src/
-│   │   ├── components/
-│   │   ├── containers/
-│   │   ├── redux/
-│   │   ├── utils/
-│   │   └── App.js
-│   └── package.json
-│
-├── server/                 # Backend (Node + Express)
-│   ├── routes/
-│   ├── models/
-│   ├── Db/helpers/
-│   ├── app.js
-│   └── package.json
-│
-└── README.md
+Postman (API Testing)
