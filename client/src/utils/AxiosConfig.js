@@ -6,7 +6,6 @@ export const instance = axios.create({
 //   
 }
 );
-
 export default function setAuthorizationToken(token){
     if(token){
         instance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
@@ -23,4 +22,5 @@ export default function setAuthorizationToken(token){
 //   }, function (error) {
 //     // Do something with request error
 //     return Promise.reject(error);
+
 //   });
