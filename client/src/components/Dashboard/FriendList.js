@@ -5,7 +5,6 @@ const FriendList = props => {
   return (
     <ul>
       {/* {console.log(props.user.friends[5])} */}
-
       {props.user.friends.map(value =>  <li className="friendlist">
         <i class="fas fa-user" />
         <span>{value}</span>
@@ -24,3 +23,4 @@ const mapStateToProps = state => {
 
 const fn = connect(mapStateToProps);
 export default fn(FriendList);
+
