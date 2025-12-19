@@ -1,66 +1,76 @@
-A full-stack Splitwise-like expense sharing application built using the MERN stack.
-The application allows users to register, log in, add shared expenses with friends, and settle balances seamlessly.
+# 💸 Splitwise Clone – MERN Stack Application
 
-🚀 Live Features
-🔐 User Authentication
+A full-stack **Splitwise-like expense sharing application** built using the **MERN stack**.  
+The application allows users to **register, log in, add shared expenses with friends, and settle balances seamlessly**.
 
-Secure Signup & Login
+---
 
-Authentication handled using JWT (JSON Web Tokens)
+## 🚀 Live Features
 
-👥 Friend Management
+### 🔐 User Authentication
+- Secure **Signup & Login**
+- Authentication using **JWT (JSON Web Tokens)**
 
-Add friends
+### 👥 Friend Management
+- Add friends
+- Manage shared expenses between users
 
-Manage shared expenses between users
+### 💰 Expense Splitting
+- Split expenses **equally** among selected users
 
-💰 Expense Splitting
+### 🔄 Settle Up
+- Clear outstanding balances between users
 
-Split expenses equally among selected users
+### 📊 Real-time Balance Updates
+- Dashboard reflects balance changes instantly
 
-🔄 Settle Up
+### ⚙️ RESTful API Architecture
+- Clean separation of **Frontend** and **Backend**
+- Scalable and maintainable design
 
-Clear outstanding balances between users
+---
 
-📊 Real-time Balance Updates
+## 🧑‍💻 Tech Stack
 
-Dashboard reflects balance changes instantly
+### Frontend
+- **React.js**
+- **Redux** (State Management)
+- **Axios** (API calls)
+- **React Router**
+- **CSS**
 
-⚙️ RESTful API Architecture
+### Backend
+- **Node.js**
+- **Express.js**
+- **MongoDB**
+- **Mongoose**
+- **JWT (JSON Web Tokens)**
 
-Clean separation of Frontend and Backend
+### Tools & Platforms
+- **Git & GitHub**
+- **MongoDB Atlas / Local MongoDB**
+- **Postman** (API testing)
 
-Scalable and maintainable design
+---
+Splitwise-Clone/
+│
+├── client/ # Frontend (React)
+│ ├── src/
+│ │ ├── components/
+│ │ ├── containers/
+│ │ ├── redux/
+│ │ ├── utils/
+│ │ └── App.js
+│ └── package.json
+│
+├── server/ # Backend (Node + Express)
+│ ├── routes/
+│ ├── models/
+│ ├── Db/helpers/
+│ ├── app.js
+│ └── package.json
+│
+└── README.md
 
-🧑‍💻 Tech Stack
-Frontend
+## 📁 Project Structure
 
-React.js
-
-Redux (State Management)
-
-Axios (API calls)
-
-React Router
-
-CSS
-
-Backend
-
-Node.js
-
-Express.js
-
-MongoDB
-
-Mongoose
-
-JWT (JSON Web Tokens)
-
-Tools & Platforms
-
-Git & GitHub
-
-MongoDB Atlas / Local MongoDB
-
-Postman (API Testing)
